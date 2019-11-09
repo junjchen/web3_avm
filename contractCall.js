@@ -1,6 +1,8 @@
 const Web3 = require("aion-web3");
 const web3 = new Web3(new Web3.providers.HttpProvider("Your node"));
 
+
+//optional
 const privateKey = "Your PK";
 const account = web3.eth.accounts.privateKeyToAccount(privateKey);
 console.log(account.address);
@@ -16,7 +18,7 @@ async function contractCall() {
     console.log(data);
 
     const Tx = {
-      from: account.address,
+      from: account.address,/*optional*/
       to: ctAddress,
       data: data,
       gasPrice: 10000000000,
